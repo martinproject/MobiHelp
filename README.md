@@ -39,9 +39,9 @@ To bring your "how-to"s and knowledge base articles into your iOS app, you will 
 + API Key: The API key lets your mobile app "talk" to your Freshdesk support portal. To get your API key, login to your Freshdesk account as the administrator (the guy who created the account). Click on your name, on the top right corner of the screen, and go to profile settings. You can find the API Key on the right. Copy the code - you'll need it soon!
 
 This is the part where you get into your hardcore hacking gear and dive into the code. Open your app delegate file and add these lines. You want to add this inside application:didFinishLaunchingWithOptions: 
-  [FDSupport 
-      setUpWithSite:  @"<mycompany.freshdesk.com>" 
-      andApikey:      @"<B0yW4sTh4t3asy>"];
+
+    [FDSupport setUpWithSite: @"<mycompany.freshdesk.com>" andApikey: @"<B0yW4sTh4t3asy>"];
+
 
 Remember to replace <mycompany.freshdesk.com> with your Freshdesk domain, and <B0yW4sTh4t3asy> with your API key. 
 __________________________________________________________________________________________________________________________
