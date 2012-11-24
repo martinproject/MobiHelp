@@ -38,11 +38,11 @@ To bring your "how-to"s and knowledge base articles into your iOS app, you will 
 + Freshdesk Domain: This is the URL of the Freshdesk account you just created (like "yourcompany.freshdesk.com"). And unless you were born in the 17th century nobody starts a domain with "http" anymore, so remember to NOT INCLUDE the "http://" part.
 + API Key: The API key lets your mobile app "talk" to your Freshdesk support portal. To get your API key, login to your Freshdesk account as the administrator (the guy who created the account). Click on your name, on the top right corner of the screen, and go to profile settings. You can find the API Key on the right. Copy the code - you'll need it soon!
 
-This is the part where you get into your hardcore hacking gear and dive into the code. Open your app delegate file, import the FreshdeskSDK.h header file 
+This is the part where you get into your hardcore hacking gear and dive into the code. Open your app delegate file. You'll first need to import the FreshdeskSDK.h header file.  
 
     #import <FreshdeskSDK/FreshdeskSDK.h>
 
-and add these lines. You want to add this inside application:didFinishLaunchingWithOptions: 
+Now add these lines inside application:didFinishLaunchingWithOptions: 
 
     [FDSupport setUpWithSite: @"<mycompany.freshdesk.com>" andApikey: @"<B0yW4sTh4t3asy>"];
 
@@ -66,11 +66,11 @@ ________________________________________________________________________________
 
 ###Step 5. Customizing the support portal
 
-You can set the navigation bar color of your knowledge base and feedback area to match your app colors. 
+You can customize the navigation bar color of the knowledge base and feedback area to match your app theme. 
 
-    [FDSupport setUpColor:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:.9 green:.4 blue:.7 alpha:2], FD_NAVBAR_COLOR]];
+    [FDSupport setUpColor:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:.9 green:.4 blue:.7 alpha:2], FD_NAVBAR_COLOR], nil];
 
-The NavBar Color that you set here will be maintained in the FAQ section and in each solution's detailed view as well.
+The NavBar Color that you set here will be maintained in the knowledge base section within your app, and in the detailed view when your users click on a specific solution as well.
 __________________________________________________________________________________________________________________________
 
 ###Step 6. Advanced Configurations
