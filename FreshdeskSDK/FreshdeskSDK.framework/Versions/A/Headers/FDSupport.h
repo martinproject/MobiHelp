@@ -14,6 +14,7 @@ extern NSString* const FD_NAVBAR_COLOR;
 
 @property (nonatomic, copy) NSString *supportSite;
 @property (nonatomic, copy) NSString *apiKey;
+@property (assign) BOOL enableSSL;
 @property (nonatomic, copy) NSString *userEmail;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *userUID;
@@ -21,6 +22,9 @@ extern NSString* const FD_NAVBAR_COLOR;
 
 // setup freshdesk support site with API key
 + (void) setUpWithSite:(NSString *)supportSite andApikey:(NSString *)apikey;
+
+//setup freshdesk support site with API Key and enableSSL
++ (void) setUpWithSite:(NSString *)supportSite andApikey:(NSString *)apikey enableSSL:(BOOL)sslEnable;
 
 //optional configurations
 + (void) setUsername:(NSString *)userName;
