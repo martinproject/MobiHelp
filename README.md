@@ -38,7 +38,11 @@ To bring your "how-to"s and knowledge base articles into your iOS app, you will 
 + Freshdesk Domain: This is the URL of the Freshdesk account you just created (like "yourcompany.freshdesk.com"). And unless you were born in the 17th century nobody starts a domain with "http" anymore, so remember to NOT INCLUDE the "http://" part.
 + API Key: The API key lets your mobile app "talk" to your Freshdesk support portal. To get your API key, login to your Freshdesk account as the administrator (the guy who created the account). Click on your name, on the top right corner of the screen, and go to profile settings. You can find the API Key on the right. Copy the code - you'll need it soon!
 
-This is the part where you get into your hardcore hacking gear and dive into the code. Open your app delegate file and add these lines. You want to add this inside application:didFinishLaunchingWithOptions: 
+This is the part where you get into your hardcore hacking gear and dive into the code. Open your app delegate file, import the FreshdeskSDK.h header file 
+
+    #import <FreshdeskSDK/FreshdeskSDK.h>
+
+and add these lines. You want to add this inside application:didFinishLaunchingWithOptions: 
 
     [FDSupport setUpWithSite: @"<mycompany.freshdesk.com>" andApikey: @"<B0yW4sTh4t3asy>"];
 
@@ -55,17 +59,18 @@ You can add a support link or feedback button right inside your application. Fro
     [[FDSupport sharedInstance] presentSupport:self];
 
 This will show your customer all the glories of your knowledge base and the status of all previous feedback they have given you. Instead if you'd like to get a little bit more "plain vanilla", you can just show the option to give feedback to users, without worrying them with FAQs and feedback histories. If that's what makes you happy, you'd have to call "presentFeedback" in your viewcontroller instead of "presentSupport".
-[[FDSupport sharedInstance] presentFeedback:self];
+    
+    [[FDSupport sharedInstance] presentFeedback:self];
 
 __________________________________________________________________________________________________________________________
 
 ###Step 5. Customizing the support portal
 
-You can set the back ground color of your knowledge base and feedback area to match your app colors. 
+You can set the navigation bar color of your knowledge base and feedback area to match your app colors. 
 
-    [FDSupport setUpColor:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], FD_APP_BGCOLOR]];
+    [FDSupport setUpColor:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:.9 green:.4 blue:.7 alpha:2], FD_NAVBAR_COLOR]];
 
-The BG Color that you set here will be maintained in the FAQ section and in each solution's detailed view as well.
+The NavBar Color that you set here will be maintained in the FAQ section and in each solution's detailed view as well.
 __________________________________________________________________________________________________________________________
 
 ###Step 6. Advanced Configurations
