@@ -9,8 +9,7 @@ ________________________________________________________________________________
 
 ###Step 1. Getting the MobiHelp SDK
 
-You will need the Freshdesk MobiHelp SDK to get started. Download the SDK FreshdeskMobiHelp.zip from ****
-The zip file will contain:
+You will need the Freshdesk MobiHelp SDK to get started. Download the Latest SDK from https://github.com/freshdesk/MobiHelp/tags the zip file will contains FreshdeskSDK-iosuniversal compiled for (i386,armv7,armv7s) and FreshdeskSDK-iosdevice compiled for (armv7, armv7s), we have done this mainly not increase your app size. Choose which ever fits your need and both the folder contains:
 
 + FreshdeskSDK.framework - Contains the interfaces for setting up MobiHelp inside your app
 + FreshdeskSDKResources.bundle - Contains images and resources required for the MobiHelp library
