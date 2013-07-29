@@ -28,6 +28,32 @@ Make sure you add the QuartzCore, SystemConfiguration, and Foundation frameworks
 Also make sure FreshdeskSDKResources.bundle is in "Copy Bundle Resources". 
 
 Great! MobiHelp is geared to win you some love from your users already!
+
+Integrating MobiHelp SDK with Cocoapods
+
+Mobihelp can also be included in the project by using Cocoapods 
+
+Cocoapods is a dependency manager for iOS. It fetches source code and resolves dependency issues between 3rd party libraries. In order to use cocoa pods , you first need to install the gem by typing the command - 
+
+  gem install cocoapods
+
+To add MobiHelp to your xcode project 
+
+  1) Create a file named "podfile" in the project root.
+  2) Add the following lines in podfile
+
+platform:ios
+
+pod 'FreshdeskSDK'
+
+and type the following command from the console.
+
+ pod install 
+
+As a result of the above command  a workspace is now generated. In the workspace all the dependencies are stored in a file called Pods. You will notice that all library and framework dependancies for the FreshdeskSDK have now been added to your project. 
+
+You can proceed to Step 3. Linking your app with your Freshdesk account 
+and complete the MobiHelp integration with your application.
 __________________________________________________________________________________________________________________________
 
 ###Step 3. Linking your app with your Freshdesk account
